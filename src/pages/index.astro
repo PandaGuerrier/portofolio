@@ -41,7 +41,7 @@ console.log(webhookUrl)
                                         <input
                                                 type="email"
                                                 placeholder="Enter your email"
-                                                class="w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
+                                                class="email w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
                                                 required
                                         />
                                     </label>
@@ -49,7 +49,7 @@ console.log(webhookUrl)
                                         <input
                                                 type="text"
                                                 placeholder="Object"
-                                                class="w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
+                                                class="object w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
                                                 required
                                         />
                                     </label>
@@ -205,7 +205,7 @@ console.log(webhookUrl)
                                     <input
                                             type="email"
                                             placeholder="Enter your email"
-                                            class="w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
+                                            class="email w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
                                             required
                                     />
                                 </label>
@@ -213,7 +213,7 @@ console.log(webhookUrl)
                                     <input
                                             type="text"
                                             placeholder="Object"
-                                            class="w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
+                                            class="object w-full px-3 py-2.5 mt-4 text-neutral-200 bg-neutral-400/10 border-neutral-700/50 rounded-md"
                                             required
                                     />
                                 </label>
@@ -278,8 +278,10 @@ console.log(webhookUrl)
 <script>
 
   function send() {
-    const email = document.querySelector('input[type="email"]')!.value
-    const object = document.querySelector('input[type="text"]')!.value
+          // @ts-ignore
+    const email = document.querySelector('.email')!.value
+      // @ts-ignore
+    const object = document.querySelector('.object')!.value
     const message = document.querySelector('textarea')!.value
 
     fetch('https://discord.com/api/webhooks/1212803939259654165/UAaYkrZXjnXMo-fxl7aPs7mXUR0K8edbchNB9aG3E5WJNPVbx9e67W6PcFw9tUPuUYjy', {
@@ -292,9 +294,10 @@ console.log(webhookUrl)
       })
     })
 
+    // @ts-ignore
     document.querySelector('input[type="email"]')!.value = ''
 
-      alert('Message sent !')
+    alert('Message sent !')
   }
 
   document.querySelector('form')?.addEventListener('submit', function (event) {

@@ -1,6 +1,9 @@
+// @ts-ignore
 import IconGithub from "../components/icons/github.astro";
+// @ts-ignore
 import IconLinkedin from "../components/icons/linkedin.astro";
-import IconTwitter from "../components/icons/twitter.astro";
+// @ts-ignore
+import IconTwitter from '../components/icons/twitter.astro';
 
 export const SOCIALS = [
   {
